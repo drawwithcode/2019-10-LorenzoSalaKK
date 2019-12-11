@@ -21,21 +21,21 @@ function draw() {
 
 
   ambientLight(15, 15, 15)
-  pointLight(200, 255, 255, locx, locy, 1000)
+  pointLight(200, 200, 200, locx, locy, 1000)
   noStroke()
 
   push()
   rotateY(180 + frameCount * 0.5)
   rotateX(120 + frameCount * 0.65)
   rotateZ(- 15 + frameCount * 0.33)
-  scale(2)
+  scale(map(mouseX,0,windowWidth,1,2))
   texture(portex)
   model(porygon)
   pop()
   rotateZ(frameCount)
 
   translate(0,windowHeight/2.5,0)
-  rotateY(frameCount*3)
+  rotateY(map(mouseY,0,windowHeight,-180,180))
   scale(0.5)
 
   texture(subtex)
